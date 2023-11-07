@@ -1,6 +1,6 @@
-# Getting Started with Smart Contracts
+# My Smart Contracts
 
-I've embarked on an exciting journey of creating and deploying my own smart contracts with a focus on innovation and blockchain technology. Thanks to the powerful ThirdWeb framework, this process has become more streamlined and efficient.
+I've embarked on an exciting journey of creating and deploying my own smart contracts with a focus on blockchain technology. Thanks to the powerful ThirdWeb framework, this process has become more streamlined and efficient.
 
 ## What I've Accomplished
 
