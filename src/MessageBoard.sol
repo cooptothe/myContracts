@@ -11,5 +11,10 @@ contract MessageBoard {
         owner = msg.sender;
     }
 
+    function postMessage(string memory message) public {
+        messages.push(message);
+        emit NewMessage(msg.sender, message);
+    }
 
+    
 }
