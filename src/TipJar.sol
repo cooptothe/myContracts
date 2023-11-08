@@ -15,4 +15,8 @@ contract TipJar {
         require(msg.value > 0, "You have to pay a tip");
         emit TipRecieved(msg.sender, msg.value);
     }
+
+    function withdrawTips() public onlyOwner {
+        
+    }
 }
