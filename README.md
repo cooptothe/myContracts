@@ -28,3 +28,18 @@ The `CoinFlip` contract is a simple coin flip game. Users can choose either "HEA
 
 - `flipCoin(CoinSide chosenSide)`: Allows users to participate in the coin flip game.
 - `Result` event: Emits the result of the coin flip.
+
+### ProfileStatus
+
+The `ProfileStatus` contract allows users to set and update their profile status messages on the Ethereum blockchain. It includes the following functionalities:
+
+- `createStatus(string memory initialStatus)`: Allows users to create an initial status message.
+- `updateStatus(string memory newStatus)`: Allows users to update their status message.
+- `getStatus(address wallet)`: Returns the status message of a specific wallet address.
+- `StatusCreated` event: Emits when a new status is created.
+- `StatusUpdated` event: Emits when a status is updated.
+- `owner`: The address of the contract owner.
+
+### HelloWorld
+
+The `HelloWorld` contract is a simple contract that returns a "Hello World" message when queried.
