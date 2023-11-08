@@ -23,7 +23,7 @@ contract TipJar {
 
     function withdrawTips() public onlyOwner {
         uint256 contractBalance = address(this).balance;
-        require(contractBalance > 0, "No tip.");
+        require(contractBalance > 0, "No tips received.");
 
         payable(owner).transfer(contractBalance);
         emit TipWithdrawn((owner), contractBalance);
