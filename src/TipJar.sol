@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-contract TipJar {
+import "@thirdweb-dev/contracts/extension/ContractMetadata.sol";
+
+contract TipJar is ContractMetadata {
     address public owner;
 
     event TipRecieved(address indexed tipper, uint256 amount);
@@ -31,5 +33,9 @@ contract TipJar {
 
     function getBalance() public view returns (uint256) {
         return address(this).balance;
+    }
+
+        function _canSetContractURI() internal view virtual override returns (bool){
+        return msg.sender == owner;
     }
 }
