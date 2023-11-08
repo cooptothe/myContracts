@@ -16,5 +16,8 @@ contract MessageBoard {
         emit NewMessage(msg.sender, message);
     }
 
-    
+    function getMessageCount(uint256 index) public view returns (string memory) {
+        require(index < messages.length, "Index out of bounds.");
+        return messages[index];
+    }
 }
