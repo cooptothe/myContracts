@@ -24,6 +24,4 @@ contract MessageBoard {
         require(index < messages.length, "Index out of bounds.");
         return messages[index];
     }
-
-
 }
