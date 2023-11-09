@@ -1,7 +1,15 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-contract CoinFlip {
+import "@thirdweb-dev/contracts/extension/ContractMetadata.sol";
+
+contract CoinFlip is ContractMetadata {
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+    
     enum CoinSide {
         HEAD,
         TAILS
@@ -25,5 +33,9 @@ contract CoinFlip {
         FlipResult flipResult = (chosenSide == result) ? FlipResult.WIN : FlipResult.LOSE;
 
         emit Result(msg.sender, chosenSide, flipResult);
+    }
+
+    function _canSetContractURI() internal view virtual override returns (bool){
+        return msg.sender == owner;
     }
 }

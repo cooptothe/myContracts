@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-contract MessageBoard {
+import "@thirdweb-dev/contracts/extension/ContractMetadata.sol";
+
+contract MessageBoard is ContractMetadata {
     address public owner;
     string[] public messages;
 
@@ -23,5 +25,9 @@ contract MessageBoard {
     function getMessage(uint256 index) public view returns (string memory) {
         require(index < messages.length, "Index out of bounds.");
         return messages[index];
+    }
+
+    function _canSetContractURI() internal view virtual override returns (bool){
+        return msg.sender == owner;
     }
 }
